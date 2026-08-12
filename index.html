@@ -621,11 +621,9 @@
       <button class="active" onclick="showDay(1)">Day 1 · Push</button>
       <button onclick="showDay(2)">Day 2 · Pull</button>
       <button onclick="showDay(3)">Day 3 · Legs</button>
-      <button onclick="showDay(4)" id="c1TabBtn">Custom 1</button>
-      <button onclick="showDay(5)" id="c2TabBtn">Custom 2</button>
-      <button onclick="showDay(7)" id="c3TabBtn">Custom 3</button>
-      <button onclick="showDay(8)" id="c4TabBtn">Custom 4</button>
       <button onclick="showDay(6)">Cardio</button>
+      <!--CUSTOM_TABS_MARKER-->
+      <button onclick="promptAddCustomDay()">+ Add Workout</button>
     </div>
 
     <!-- DAY 1 PUSH -->
@@ -774,288 +772,6 @@
       </div>
     </div>
 
-    <!-- DAY 4 CUSTOM 1 -->
-    <div class="dayPanel" id="day4" style="display:none;">
-      <div class="card">
-        <h2 id="c1Heading">Custom 1</h2>
-        <p class="intro-text">Build your own session. Fill in as many rows as you need.</p>
-        <div class="log-row" style="grid-template-columns:1fr;margin-top:10px;">
-          <div><label>Rename this day</label>
-            <input type="text" id="c1NameInput" placeholder="e.g. Arms Day" oninput="renameCustomDay(1)">
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Your Exercises</h2>
-        
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_1"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_2"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_3"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_4"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_5"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_6"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_7"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_8"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_9"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c1_name_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c1_sets_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c1_reps_10"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c1_weight_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c1_notes_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c1_tempo_10"></div>
-      </div>
-        <button class="btn full" style="margin-top:10px;" onclick="saveCustomLog(1)">Save to My Journal</button>
-        <div class="save-msg" id="c1SaveMsg"></div>
-        <button class="btn secondary full" style="margin-top:10px;display:none;" id="c1ShareBtn" onclick="shareLastWorkout()">Share This Workout</button>
-      </div>
-    </div>
-
-    <!-- DAY 5 CUSTOM 2 -->
-    <div class="dayPanel" id="day5" style="display:none;">
-      <div class="card">
-        <h2 id="c2Heading">Custom 2</h2>
-        <p class="intro-text">Build your own session. Fill in as many rows as you need.</p>
-        <div class="log-row" style="grid-template-columns:1fr;margin-top:10px;">
-          <div><label>Rename this day</label>
-            <input type="text" id="c2NameInput" placeholder="e.g. Core Day" oninput="renameCustomDay(2)">
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Your Exercises</h2>
-        
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_1"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_2"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_3"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_4"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_5"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_6"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_7"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_8"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_9"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c2_name_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c2_sets_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c2_reps_10"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c2_weight_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c2_notes_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c2_tempo_10"></div>
-      </div>
-        <button class="btn full" style="margin-top:10px;" onclick="saveCustomLog(2)">Save to My Journal</button>
-        <div class="save-msg" id="c2SaveMsg"></div>
-        <button class="btn secondary full" style="margin-top:10px;display:none;" id="c2ShareBtn" onclick="shareLastWorkout()">Share This Workout</button>
-      </div>
-    </div>
-
     <!-- DAY 6 CARDIO -->
     <div class="dayPanel" id="day6" style="display:none;">
       <div class="card">
@@ -1101,289 +817,7 @@
       </div>
     </div>
 
-    <!-- DAY 7 CUSTOM 3 -->
-    <div class="dayPanel" id="day7" style="display:none;">
-      <div class="card">
-        <h2 id="c3Heading">Custom 3</h2>
-        <p class="intro-text">Build your own session. Fill in as many rows as you need.</p>
-        <div class="log-row" style="grid-template-columns:1fr;margin-top:10px;">
-          <div><label>Rename this day</label>
-            <input type="text" id="c3NameInput" placeholder="e.g. Mobility Day" oninput="renameCustomDay(3)">
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Your Exercises</h2>
-        
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_1"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_2"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_3"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_4"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_5"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_6"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_7"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_8"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_9"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c3_name_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c3_sets_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c3_reps_10"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c3_weight_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c3_tempo_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c3_notes_10"></div>
-      </div>
-        <button class="btn full" style="margin-top:10px;" onclick="saveCustomLog(3)">Save to My Journal</button>
-        <div class="save-msg" id="c3SaveMsg"></div>
-        <button class="btn secondary full" style="margin-top:10px;display:none;" id="c3ShareBtn" onclick="shareLastWorkout()">Share This Workout</button>
-      </div>
-    </div>
-
-    <!-- DAY 8 CUSTOM 4 -->
-    <div class="dayPanel" id="day8" style="display:none;">
-      <div class="card">
-        <h2 id="c4Heading">Custom 4</h2>
-        <p class="intro-text">Build your own session. Fill in as many rows as you need.</p>
-        <div class="log-row" style="grid-template-columns:1fr;margin-top:10px;">
-          <div><label>Rename this day</label>
-            <input type="text" id="c4NameInput" placeholder="e.g. Mobility Day" oninput="renameCustomDay(4)">
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Your Exercises</h2>
-        
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_1"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_1"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_1"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_2"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_2"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_2"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_3"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_3"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_3"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_4"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_4"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_4"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_5"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_5"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_5"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_6"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_6"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_6"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_7"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_7"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_7"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_8"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_8"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_8"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_9"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_9"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_9"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
-        <div><input type="text" placeholder="Exercise name" id="c4_name_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Sets" id="c4_sets_10"></div>
-        <div><input type="number" min="1" step="1" placeholder="Reps" id="c4_reps_10"></div>
-        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="c4_weight_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="c4_tempo_10"></div>
-      </div>
-      <div class="log-row" style="grid-template-columns:1fr;">
-        <div><input type="text" placeholder="Notes" id="c4_notes_10"></div>
-      </div>
-        <button class="btn full" style="margin-top:10px;" onclick="saveCustomLog(4)">Save to My Journal</button>
-        <div class="save-msg" id="c4SaveMsg"></div>
-        <button class="btn secondary full" style="margin-top:10px;display:none;" id="c4ShareBtn" onclick="shareLastWorkout()">Share This Workout</button>
-      </div>
-    </div>
-
-      </section>
+    </section>
 
   <!-- KAI -->
   <section id="kai" class="section">
@@ -1419,7 +853,7 @@
 
     <div class="card">
       <h2>My Week of Kai</h2>
-      <p class="intro-text">Jot down what you've been eating each day. No need to be exact — just enough to spot patterns.</p>
+      <p class="intro-text">Jot down what you've been eating by meal, each day. No need to be exact — just enough to spot patterns.</p>
       <div id="kaiWeekFields"></div>
       <button class="btn full" style="margin-top:10px;" onclick="saveKaiWeek()">Save This Week</button>
       <div class="save-msg" id="kaiWeekSaveMsg"></div>
@@ -1489,10 +923,6 @@
             <option>Push</option>
             <option>Pull</option>
             <option>Legs</option>
-            <option value="Custom1" id="logDayOptC1">Custom 1</option>
-            <option value="Custom2" id="logDayOptC2">Custom 2</option>
-            <option value="Custom3" id="logDayOptC3">Custom 3</option>
-            <option value="Custom4" id="logDayOptC4">Custom 4</option>
             <option value="Cardio">Cardio</option>
           </select>
         </div>
@@ -1714,7 +1144,7 @@ function enterApp(profile){
   document.getElementById('greetName').textContent = profile.name;
   document.getElementById('chipAvatar').textContent = profile.avatar;
   renderHomeStats();
-  loadCustomDayNames();
+  loadCustomDays();
 }
 
 function logout(){
@@ -1741,11 +1171,17 @@ function goTo(id){
 
 function showDay(n){
   document.querySelectorAll('.dayPanel').forEach(p=>p.style.display='none');
-  document.getElementById('day'+n).style.display='block';
+  const panel = document.getElementById('day'+n);
+  if(panel) panel.style.display='block';
   document.querySelectorAll('#daySelect button').forEach(b=>{
+    const btnDay = b.dataset.day;
+    if(btnDay !== undefined){
+      b.classList.toggle('active', String(btnDay) === String(n));
+      return;
+    }
     const onclickAttr = b.getAttribute('onclick') || '';
-    const match = onclickAttr.match(/showDay\((\d+)\)/);
-    b.classList.toggle('active', !!match && parseInt(match[1],10) === n);
+    const match = onclickAttr.match(/showDay\('?(\w+)'?\)/);
+    b.classList.toggle('active', !!match && match[1] === String(n));
   });
 }
 
@@ -1781,7 +1217,7 @@ function renderExerciseFields(){
     return;
   }
 
-  if(day === 'Custom1' || day === 'Custom2' || day === 'Custom3' || day === 'Custom4'){
+  if(day.indexOf('custom:') === 0){
     const rows = [1,2,3,4,5];
     container.innerHTML = rows.map(i=>`
       <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
@@ -1853,8 +1289,8 @@ function saveLog(){
     return;
   }
 
-  if(day === 'Custom1' || day === 'Custom2' || day === 'Custom3' || day === 'Custom4'){
-    const n = day.slice(-1);
+  if(day.indexOf('custom:') === 0){
+    const customId = day.slice('custom:'.length);
     const exercises = [];
     for(let i=1;i<=5;i++){
       const name = document.getElementById('cx_name_'+i).value;
@@ -1873,7 +1309,9 @@ function saveLog(){
       setTimeout(()=>document.getElementById('logSaveMsg').textContent='', 3000);
       return;
     }
-    const dayLabel = localStorage.getItem('tkk_customname_'+n) || ('Custom '+n);
+    const customList = getCustomDays();
+    const customDay = customList.find(d=>d.id===customId);
+    const dayLabel = customDay ? customDay.name : 'Custom Day';
     const entries = JSON.parse(localStorage.getItem('tkk_journal') || '[]');
     entries.unshift({date, day: dayLabel, exercises, notes, ts: Date.now()});
     localStorage.setItem('tkk_journal', JSON.stringify(entries));
@@ -1941,6 +1379,7 @@ async function shareLastWorkout(){
   }
 }
 
+let journalEditIndex = null;
 function renderHistory(){
   const entries = JSON.parse(localStorage.getItem('tkk_journal') || '[]');
   const el = document.getElementById('journalHistory');
@@ -1948,7 +1387,34 @@ function renderHistory(){
     el.innerHTML = '<p class="intro-text">No entries yet. Log your first session above.</p>';
     return;
   }
-  el.innerHTML = entries.map(e=>`
+  el.innerHTML = entries.map((e,i)=>{
+    if(journalEditIndex === i){
+      return `
+        <div class="exercise-card"><div class="exercise-body">
+          <div class="log-row" style="grid-template-columns:1fr;">
+            <div><label>Date</label><input type="text" id="je_date_${i}" value="${(e.date||'').replace(/"/g,'&quot;')}"></div>
+          </div>
+          ${e.exercises.map((x,xi)=>`
+            <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+              <div><label>Exercise</label><input type="text" id="je_name_${i}_${xi}" value="${(x.name||'').replace(/"/g,'&quot;')}"></div>
+              <div><label>Sets</label><input type="number" id="je_sets_${i}_${xi}" value="${x.sets||''}"></div>
+              <div><label>Reps</label><input type="number" id="je_reps_${i}_${xi}" value="${x.reps||''}"></div>
+              <div><label>Weight (kg)</label><input type="number" step="0.5" id="je_weight_${i}_${xi}" value="${x.weight||''}"></div>
+            </div>
+            <div class="log-row" style="grid-template-columns:1fr 1fr;">
+              <div><label>Slow-Count Eccentrics (secs)</label><input type="number" id="je_tempo_${i}_${xi}" value="${x.tempo||''}"></div>
+              <div><label>Notes</label><input type="text" id="je_notes_${i}_${xi}" value="${(x.notes||'').replace(/"/g,'&quot;')}"></div>
+            </div>
+          `).join('')}
+          <div class="log-row" style="grid-template-columns:1fr;">
+            <div><label>Session Notes</label><textarea id="je_sessionnotes_${i}">${e.notes||''}</textarea></div>
+          </div>
+          <button class="btn full" style="margin-top:10px;" onclick="saveJournalEdit(${i})">Save Changes</button>
+          <button class="btn secondary full" style="margin-top:10px;" onclick="cancelJournalEdit()">Cancel</button>
+        </div></div>
+      `;
+    }
+    return `
     <div class="exercise-card"><div class="exercise-body">
       <div class="exercise-title">${e.day} — ${e.date}</div>
       <table>
@@ -1956,8 +1422,46 @@ function renderHistory(){
         ${e.exercises.map(x=>`<tr><td>${x.name}</td><td>${x.sets||'—'}</td><td>${x.reps||'—'}</td><td>${x.weight?x.weight+' kg':'—'}</td><td>${x.tempo?x.tempo+'s':'—'}</td><td>${x.notes||'—'}</td></tr>`).join('')}
       </table>
       ${e.notes?`<div class="note-box">${e.notes}</div>`:''}
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <button class="btn secondary" onclick="editJournalEntry(${i})">Edit</button>
+        <button class="btn secondary" onclick="deleteJournalEntry(${i})">Delete</button>
+      </div>
     </div></div>
-  `).join('');
+  `;
+  }).join('');
+}
+function editJournalEntry(i){
+  journalEditIndex = i;
+  renderHistory();
+}
+function cancelJournalEdit(){
+  journalEditIndex = null;
+  renderHistory();
+}
+function saveJournalEdit(i){
+  const entries = JSON.parse(localStorage.getItem('tkk_journal') || '[]');
+  const e = entries[i];
+  e.date = document.getElementById('je_date_'+i).value;
+  e.exercises = e.exercises.map((x,xi)=>({
+    name: document.getElementById('je_name_'+i+'_'+xi).value,
+    sets: document.getElementById('je_sets_'+i+'_'+xi).value,
+    reps: document.getElementById('je_reps_'+i+'_'+xi).value,
+    weight: document.getElementById('je_weight_'+i+'_'+xi).value,
+    tempo: document.getElementById('je_tempo_'+i+'_'+xi).value,
+    notes: document.getElementById('je_notes_'+i+'_'+xi).value
+  }));
+  e.notes = document.getElementById('je_sessionnotes_'+i).value;
+  entries[i] = e;
+  localStorage.setItem('tkk_journal', JSON.stringify(entries));
+  journalEditIndex = null;
+  renderHistory();
+}
+function deleteJournalEntry(i){
+  if(!confirm('Delete this entry? This cannot be undone.')) return;
+  const entries = JSON.parse(localStorage.getItem('tkk_journal') || '[]');
+  entries.splice(i,1);
+  localStorage.setItem('tkk_journal', JSON.stringify(entries));
+  renderHistory();
 }
 
 function saveCheckin(){
@@ -2026,6 +1530,7 @@ function loadFreeNotes(){
 
 // ---- Kai weekly log ----
 const KAI_DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const KAI_MEALS = ['Breakfast','Lunch','Dinner','Extra'];
 function renderKaiWeekFields(){
   const container = document.getElementById('kaiWeekFields');
   if(!container) return;
@@ -2037,11 +1542,16 @@ function renderKaiWeekFields(){
       </div>
     </div>
   ` + KAI_DAYS.map((d,i)=>`
-    <div class="log-row" style="grid-template-columns:1fr;">
-      <div>
-        <label>${d}</label>
-        <textarea id="kaiDay_${i}" placeholder="What did you eat? Any signs — energy, digestion, sleep..."></textarea>
-      </div>
+    <div class="card" style="margin-top:10px;">
+      <h3 style="margin:0 0 8px;">${d}</h3>
+      ${KAI_MEALS.map((m,mi)=>`
+        <div class="log-row" style="grid-template-columns:1fr;">
+          <div>
+            <label>${m}</label>
+            <textarea id="kaiDay_${i}_${mi}" placeholder="What did you eat? Any signs — energy, digestion, sleep..."></textarea>
+          </div>
+        </div>
+      `).join('')}
     </div>
   `).join('');
 }
@@ -2049,7 +1559,10 @@ function saveKaiWeek(){
   const weekOf = document.getElementById('kaiWeekOf').value || new Date().toLocaleDateString();
   const days = KAI_DAYS.map((d,i)=>({
     day: d,
-    notes: document.getElementById('kaiDay_'+i).value
+    meals: KAI_MEALS.map((m,mi)=>({
+      meal: m,
+      notes: document.getElementById('kaiDay_'+i+'_'+mi).value
+    }))
   }));
   const list = JSON.parse(localStorage.getItem('tkk_kaiweeks') || '[]');
   list.unshift({weekOf, days, ts: Date.now()});
@@ -2059,6 +1572,16 @@ function saveKaiWeek(){
   renderKaiWeekFields();
   renderKaiWeekHistory();
 }
+let kaiEditIndex = null;
+function normalizeKaiDay(d){
+  // Backward compatibility: older entries stored a single free-text 'notes' field per day
+  // instead of per-meal breakdown. Migrate them into the Extra slot so nothing is lost.
+  if(d.meals) return d;
+  return {
+    day: d.day,
+    meals: KAI_MEALS.map(m => ({ meal: m, notes: m==='Extra' ? (d.notes||'') : '' }))
+  };
+}
 function renderKaiWeekHistory(){
   const list = JSON.parse(localStorage.getItem('tkk_kaiweeks') || '[]');
   const el = document.getElementById('kaiWeekHistory');
@@ -2067,81 +1590,244 @@ function renderKaiWeekHistory(){
     el.innerHTML = '<p class="intro-text">No weeks logged yet. Add your first above.</p>';
     return;
   }
-  el.innerHTML = list.map(w=>`
+  el.innerHTML = list.map((w,i)=>{
+    if(kaiEditIndex === i){
+      return `
+        <div class="exercise-card"><div class="exercise-body">
+          <div class="log-row" style="grid-template-columns:1fr;">
+            <div><label>Week of</label><input type="text" id="ke_weekof_${i}" value="${(w.weekOf||'').replace(/"/g,'&quot;')}"></div>
+          </div>
+          ${w.days.map(normalizeKaiDay).map((d,di)=>`
+            <div class="card" style="margin-top:10px;">
+              <h3 style="margin:0 0 8px;">${d.day}</h3>
+              ${(d.meals||[]).map((m,mi)=>`
+                <div class="log-row" style="grid-template-columns:1fr;">
+                  <div><label>${m.meal}</label><textarea id="ke_meal_${i}_${di}_${mi}">${m.notes||''}</textarea></div>
+                </div>
+              `).join('')}
+            </div>
+          `).join('')}
+          <button class="btn full" style="margin-top:10px;" onclick="saveKaiWeekEdit(${i})">Save Changes</button>
+          <button class="btn secondary full" style="margin-top:10px;" onclick="cancelKaiWeekEdit()">Cancel</button>
+        </div></div>
+      `;
+    }
+    return `
     <div class="exercise-card"><div class="exercise-body">
       <div class="exercise-title">Week of ${w.weekOf}</div>
-      ${w.days.filter(d=>d.notes && d.notes.trim()).map(d=>`
-        <div class="note-box" style="margin-top:8px;"><b>${d.day}:</b> ${d.notes}</div>
-      `).join('') || '<p class="intro-text" style="margin-top:8px;">No notes recorded this week.</p>'}
+      ${w.days.map(normalizeKaiDay).map(d=>{
+        const meals = (d.meals||[]).filter(m=>m.notes && m.notes.trim());
+        if(meals.length===0) return '';
+        return `<div class="note-box" style="margin-top:8px;">
+          <b>${d.day}</b>
+          ${meals.map(m=>`<div style="margin-top:4px;"><b>${m.meal}:</b> ${m.notes}</div>`).join('')}
+        </div>`;
+      }).join('') || '<p class="intro-text" style="margin-top:8px;">No notes recorded this week.</p>'}
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <button class="btn secondary" onclick="editKaiWeek(${i})">Edit</button>
+        <button class="btn secondary" onclick="deleteKaiWeek(${i})">Delete</button>
+      </div>
     </div></div>
-  `).join('');
+  `;
+  }).join('');
+}
+function editKaiWeek(i){
+  kaiEditIndex = i;
+  renderKaiWeekHistory();
+}
+function cancelKaiWeekEdit(){
+  kaiEditIndex = null;
+  renderKaiWeekHistory();
+}
+function saveKaiWeekEdit(i){
+  const list = JSON.parse(localStorage.getItem('tkk_kaiweeks') || '[]');
+  const w = list[i];
+  w.weekOf = document.getElementById('ke_weekof_'+i).value;
+  w.days = w.days.map(normalizeKaiDay).map((d,di)=>({
+    day: d.day,
+    meals: (d.meals||[]).map((m,mi)=>({
+      meal: m.meal,
+      notes: document.getElementById('ke_meal_'+i+'_'+di+'_'+mi).value
+    }))
+  }));
+  list[i] = w;
+  localStorage.setItem('tkk_kaiweeks', JSON.stringify(list));
+  kaiEditIndex = null;
+  renderKaiWeekHistory();
+}
+function deleteKaiWeek(i){
+  if(!confirm('Delete this week? This cannot be undone.')) return;
+  const list = JSON.parse(localStorage.getItem('tkk_kaiweeks') || '[]');
+  list.splice(i,1);
+  localStorage.setItem('tkk_kaiweeks', JSON.stringify(list));
+  renderKaiWeekHistory();
 }
 
-// ---- Custom days ----
-function renameCustomDay(n){
-  const input = document.getElementById('c'+n+'NameInput');
-  const name = input.value.trim() || ('Custom '+n);
-  localStorage.setItem('tkk_customname_'+n, name);
-  const heading = document.getElementById('c'+n+'Heading');
+// ---- Custom days (dynamic) ----
+function getCustomDays(){
+  return JSON.parse(localStorage.getItem('tkk_customdays') || '[]');
+}
+function saveCustomDaysList(list){
+  localStorage.setItem('tkk_customdays', JSON.stringify(list));
+}
+function promptAddCustomDay(){
+  const name = prompt('Name this workout day (e.g. Mobility Day, Arms Day):');
+  if(!name || !name.trim()) return;
+  const id = 'custom_' + Date.now();
+  const list = getCustomDays();
+  list.push({id, name: name.trim()});
+  saveCustomDaysList(list);
+  renderCustomDayTabs();
+  buildCustomDayPanel(id, name.trim());
+  populateJournalCustomOptions();
+  showDay(id);
+}
+function renderCustomDayTabs(){
+  const daySelect = document.getElementById('daySelect');
+  if(!daySelect) return;
+  // remove any previously injected custom tab buttons so we can rebuild in order
+  Array.from(daySelect.querySelectorAll('button[data-day]')).forEach(b=>b.remove());
+  const addBtn = Array.from(daySelect.querySelectorAll('button')).find(b => (b.getAttribute('onclick')||'').indexOf('promptAddCustomDay') !== -1);
+  const list = getCustomDays();
+  list.forEach(d=>{
+    const btn = document.createElement('button');
+    btn.setAttribute('onclick', `showDay('${d.id}')`);
+    btn.setAttribute('data-day', d.id);
+    btn.id = 'tab_' + d.id;
+    btn.textContent = d.name;
+    if(addBtn) daySelect.insertBefore(btn, addBtn);
+    else daySelect.appendChild(btn);
+  });
+}
+function buildCustomDayPanel(id, name){
+  const section = document.getElementById('workouts');
+  if(!section) return;
+  if(document.getElementById('day'+id)) return; // already built
+  const rows = [1,2,3,4,5,6,7,8,9,10].map(i=>`
+      <div class="log-row" style="grid-template-columns:2fr 1fr 1fr 1fr;">
+        <div><input type="text" placeholder="Exercise name" id="${id}_name_${i}"></div>
+        <div><input type="number" min="1" step="1" placeholder="Sets" id="${id}_sets_${i}"></div>
+        <div><input type="number" min="1" step="1" placeholder="Reps" id="${id}_reps_${i}"></div>
+        <div><input type="number" step="0.5" placeholder="Weight (kg)" id="${id}_weight_${i}"></div>
+      </div>
+      <div class="log-row" style="grid-template-columns:1fr;">
+        <div><input type="number" min="0" step="1" placeholder="Slow-count eccentrics (secs, optional)" id="${id}_tempo_${i}"></div>
+      </div>
+      <div class="log-row" style="grid-template-columns:1fr;">
+        <div><input type="text" placeholder="Notes" id="${id}_notes_${i}"></div>
+      </div>
+  `).join('');
+  const panel = document.createElement('div');
+  panel.className = 'dayPanel';
+  panel.id = 'day' + id;
+  panel.style.display = 'none';
+  panel.innerHTML = `
+    <div class="card">
+      <h2 id="${id}_heading">${name}</h2>
+      <p class="intro-text">Build your own session. Fill in as many rows as you need.</p>
+      <div class="log-row" style="grid-template-columns:1fr;margin-top:10px;">
+        <div><label>Rename this day</label>
+          <input type="text" id="${id}_nameinput" value="${name.replace(/"/g,'&quot;')}" oninput="renameCustomDayDyn('${id}')">
+        </div>
+      </div>
+      <button class="btn secondary" style="margin-top:10px;" onclick="deleteCustomDayDyn('${id}')">Delete This Day</button>
+    </div>
+    <div class="card">
+      <h2>Your Exercises</h2>
+      ${rows}
+      <button class="btn full" style="margin-top:10px;" onclick="saveCustomLogDyn('${id}')">Save to My Journal</button>
+      <div class="save-msg" id="${id}_savemsg"></div>
+      <button class="btn secondary full" style="margin-top:10px;display:none;" id="${id}_sharebtn" onclick="shareLastWorkout()">Share This Workout</button>
+    </div>
+  `;
+  section.appendChild(panel);
+}
+function loadCustomDays(){
+  const list = getCustomDays();
+  renderCustomDayTabs();
+  list.forEach(d => buildCustomDayPanel(d.id, d.name));
+  populateJournalCustomOptions();
+}
+function renameCustomDayDyn(id){
+  const input = document.getElementById(id+'_nameinput');
+  const list = getCustomDays();
+  const day = list.find(d=>d.id===id);
+  if(!day) return;
+  const name = input.value.trim() || day.name;
+  day.name = name;
+  saveCustomDaysList(list);
+  const heading = document.getElementById(id+'_heading');
   if(heading) heading.textContent = name;
-  const tabBtn = document.getElementById('c'+n+'TabBtn');
+  const tabBtn = document.getElementById('tab_'+id);
   if(tabBtn) tabBtn.textContent = name;
-  const logOpt = document.getElementById('logDayOptC'+n);
-  if(logOpt) logOpt.textContent = name;
+  populateJournalCustomOptions();
 }
-function loadCustomDayNames(){
-  for(const n of [1,2,3,4]){
-    const saved = localStorage.getItem('tkk_customname_'+n);
-    if(saved){
-      const input = document.getElementById('c'+n+'NameInput');
-      const heading = document.getElementById('c'+n+'Heading');
-      const tabBtn = document.getElementById('c'+n+'TabBtn');
-      const logOpt = document.getElementById('logDayOptC'+n);
-      if(input) input.value = saved;
-      if(heading) heading.textContent = saved;
-      if(tabBtn) tabBtn.textContent = saved;
-      if(logOpt) logOpt.textContent = saved;
-    }
-  }
+function deleteCustomDayDyn(id){
+  if(!confirm('Delete this workout day? Journal entries already saved under it will stay in your history.')) return;
+  let list = getCustomDays();
+  list = list.filter(d=>d.id!==id);
+  saveCustomDaysList(list);
+  const panel = document.getElementById('day'+id);
+  if(panel) panel.remove();
+  renderCustomDayTabs();
+  populateJournalCustomOptions();
+  showDay(1);
 }
-function saveCustomLog(n){
-  const prefix = 'c'+n;
+function saveCustomLogDyn(id){
   const date = new Date().toLocaleDateString();
   const exercises = [];
   for(let i=1;i<=10;i++){
-    const name = document.getElementById(prefix+'_name_'+i).value;
+    const name = document.getElementById(id+'_name_'+i).value;
     if(!name || !name.trim()) continue;
     exercises.push({
       name: name.trim(),
-      sets: document.getElementById(prefix+'_sets_'+i).value,
-      reps: document.getElementById(prefix+'_reps_'+i).value,
-      weight: document.getElementById(prefix+'_weight_'+i).value,
-      tempo: document.getElementById(prefix+'_tempo_'+i).value,
-      notes: document.getElementById(prefix+'_notes_'+i).value
+      sets: document.getElementById(id+'_sets_'+i).value,
+      reps: document.getElementById(id+'_reps_'+i).value,
+      weight: document.getElementById(id+'_weight_'+i).value,
+      tempo: document.getElementById(id+'_tempo_'+i).value,
+      notes: document.getElementById(id+'_notes_'+i).value
     });
   }
   if(exercises.length===0){
-    document.getElementById(prefix+'SaveMsg').textContent = 'Add at least one exercise name first.';
-    setTimeout(()=>document.getElementById(prefix+'SaveMsg').textContent='', 3000);
+    document.getElementById(id+'_savemsg').textContent = 'Add at least one exercise name first.';
+    setTimeout(()=>document.getElementById(id+'_savemsg').textContent='', 3000);
     return;
   }
+  const list = getCustomDays();
+  const day = list.find(d=>d.id===id);
+  const dayLabel = day ? day.name : 'Custom Day';
   const entries = JSON.parse(localStorage.getItem('tkk_journal') || '[]');
-  const dayLabel = localStorage.getItem('tkk_customname_'+n) || ('Custom '+n);
   entries.unshift({date, day: dayLabel, exercises, notes: '', ts: Date.now()});
   localStorage.setItem('tkk_journal', JSON.stringify(entries));
-  document.getElementById(prefix+'SaveMsg').textContent = 'Saved to My Journal.';
+  document.getElementById(id+'_savemsg').textContent = 'Saved to My Journal.';
   window.tkkLastShareText = buildShareText(dayLabel, date, exercises, '');
-  document.getElementById(prefix+'ShareBtn').style.display = 'block';
-  setTimeout(()=>document.getElementById(prefix+'SaveMsg').textContent='', 3000);
+  document.getElementById(id+'_sharebtn').style.display = 'block';
+  setTimeout(()=>document.getElementById(id+'_savemsg').textContent='', 3000);
   for(let i=1;i<=10;i++){
-    document.getElementById(prefix+'_name_'+i).value='';
-    document.getElementById(prefix+'_sets_'+i).value='';
-    document.getElementById(prefix+'_reps_'+i).value='';
-    document.getElementById(prefix+'_weight_'+i).value='';
-    document.getElementById(prefix+'_tempo_'+i).value='';
-    document.getElementById(prefix+'_notes_'+i).value='';
+    document.getElementById(id+'_name_'+i).value='';
+    document.getElementById(id+'_sets_'+i).value='';
+    document.getElementById(id+'_reps_'+i).value='';
+    document.getElementById(id+'_weight_'+i).value='';
+    document.getElementById(id+'_tempo_'+i).value='';
+    document.getElementById(id+'_notes_'+i).value='';
   }
   renderHistory();
+  renderHomeStats();
+}
+function populateJournalCustomOptions(){
+  const sel = document.getElementById('logDay');
+  if(!sel) return;
+  // remove previously injected custom options
+  Array.from(sel.querySelectorAll('option[data-customopt]')).forEach(o=>o.remove());
+  const cardioOpt = sel.querySelector('option[value="Cardio"]');
+  const list = getCustomDays();
+  list.forEach(d=>{
+    const opt = document.createElement('option');
+    opt.value = 'custom:' + d.id;
+    opt.textContent = d.name;
+    opt.setAttribute('data-customopt', '1');
+    sel.insertBefore(opt, cardioOpt);
+  });
 }
 
 // ---- Cardio ----
@@ -2176,6 +1862,7 @@ function saveCardioLog(){
   renderCardioHistory();
   renderHomeStats();
 }
+let cardioEditIndex = null;
 function renderCardioHistory(){
   const entries = JSON.parse(localStorage.getItem('tkk_cardio') || '[]');
   const el = document.getElementById('cardioHistory');
@@ -2184,7 +1871,29 @@ function renderCardioHistory(){
     el.innerHTML = '<p class="intro-text">No cardio sessions logged yet.</p>';
     return;
   }
-  el.innerHTML = entries.map(e=>`
+  el.innerHTML = entries.map((e,i)=>{
+    if(cardioEditIndex === i){
+      return `
+        <div class="exercise-card"><div class="exercise-body">
+          <div class="log-row" style="grid-template-columns:1fr 1fr;">
+            <div><label>Activity</label><input type="text" id="ce_activity_${i}" value="${(e.activity||'').replace(/"/g,'&quot;')}"></div>
+            <div><label>Date</label><input type="text" id="ce_date_${i}" value="${(e.date||'').replace(/"/g,'&quot;')}"></div>
+          </div>
+          <div class="log-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+            <div><label>Distance (km)</label><input type="number" step="0.1" id="ce_km_${i}" value="${e.km||''}"></div>
+            <div><label>Time (min)</label><input type="number" id="ce_time_${i}" value="${e.time||''}"></div>
+            <div><label>Steps</label><input type="number" id="ce_steps_${i}" value="${e.steps||''}"></div>
+            <div><label>Pool lengths</label><input type="number" id="ce_lengths_${i}" value="${e.lengths||''}"></div>
+          </div>
+          <div class="log-row" style="grid-template-columns:1fr;">
+            <div><label>Notes</label><textarea id="ce_notes_${i}">${e.notes||''}</textarea></div>
+          </div>
+          <button class="btn full" style="margin-top:10px;" onclick="saveCardioEdit(${i})">Save Changes</button>
+          <button class="btn secondary full" style="margin-top:10px;" onclick="cancelCardioEdit()">Cancel</button>
+        </div></div>
+      `;
+    }
+    return `
     <div class="exercise-card"><div class="exercise-body">
       <div class="exercise-title">${e.activity} — ${e.date}</div>
       <table>
@@ -2192,8 +1901,43 @@ function renderCardioHistory(){
         <tr><td>${e.km?e.km+' km':'—'}</td><td>${e.time?e.time+' min':'—'}</td><td>${e.steps||'—'}</td><td>${e.lengths||'—'}</td></tr>
       </table>
       ${e.notes?`<div class="note-box">${e.notes}</div>`:''}
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <button class="btn secondary" onclick="editCardioEntry(${i})">Edit</button>
+        <button class="btn secondary" onclick="deleteCardioEntry(${i})">Delete</button>
+      </div>
     </div></div>
-  `).join('');
+  `;
+  }).join('');
+}
+function editCardioEntry(i){
+  cardioEditIndex = i;
+  renderCardioHistory();
+}
+function cancelCardioEdit(){
+  cardioEditIndex = null;
+  renderCardioHistory();
+}
+function saveCardioEdit(i){
+  const entries = JSON.parse(localStorage.getItem('tkk_cardio') || '[]');
+  const e = entries[i];
+  e.activity = document.getElementById('ce_activity_'+i).value;
+  e.date = document.getElementById('ce_date_'+i).value;
+  e.km = document.getElementById('ce_km_'+i).value;
+  e.time = document.getElementById('ce_time_'+i).value;
+  e.steps = document.getElementById('ce_steps_'+i).value;
+  e.lengths = document.getElementById('ce_lengths_'+i).value;
+  e.notes = document.getElementById('ce_notes_'+i).value;
+  entries[i] = e;
+  localStorage.setItem('tkk_cardio', JSON.stringify(entries));
+  cardioEditIndex = null;
+  renderCardioHistory();
+}
+function deleteCardioEntry(i){
+  if(!confirm('Delete this entry? This cannot be undone.')) return;
+  const entries = JSON.parse(localStorage.getItem('tkk_cardio') || '[]');
+  entries.splice(i,1);
+  localStorage.setItem('tkk_cardio', JSON.stringify(entries));
+  renderCardioHistory();
 }
 
 // ---- Analytics ----
